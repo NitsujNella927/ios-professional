@@ -124,7 +124,7 @@ extension LoginViewController {
             return
         }
         
-        if username == "Kevin" && password == "Welcome" {
+        if username == "Justin" && password == "Welcome" {
             signInButton.configuration?.showsActivityIndicator = true
         } else {
             configureView(withMessage: "Incorrect username / password")
