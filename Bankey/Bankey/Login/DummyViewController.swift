@@ -13,6 +13,8 @@ class DummyViewController: UIViewController {
     let label = UILabel()
     let logOutButton = UIButton(type: .system)
     
+    weak var logoutDelegate: LogoutDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         style()
@@ -40,6 +42,7 @@ extension DummyViewController {
     
     func layout() {
         stackView.addArrangedSubview(label)
+        //stackView.addArrangedSubview(logOutButton)
         
         view.addSubview(stackView)
         view.addSubview(logOutButton)
@@ -65,6 +68,6 @@ extension DummyViewController {
     }
     
     private func logout() {
-        print("Logged Out")
+        logoutDelegate?.didLogout()
     }
 }

@@ -25,10 +25,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         loginViewController.delegate = self
         onboardingContainerViewController.delegate = self
+        dummyViewController.logoutDelegate = self
         
-        window?.rootViewController = dummyViewController
+//        window?.rootViewController = dummyViewController
         
-//        window?.rootViewController = loginViewController
+       window?.rootViewController = loginViewController
 //        window?.rootViewController = onboardingContainerViewController
 //        window?.rootViewController = OnboardingViewController(heroImageName: "delorean", titleText: "Bankey is faster, easier to use, and has a brand new look and feel that will make you feel like you are back in 1989.")
         
@@ -37,13 +38,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
 }
 
-extension AppDelegate: LoginViewControllerDelegate, OnboardingContainerViewControllerDelegate {
+extension AppDelegate: LoginViewControllerDelegate, OnboardingContainerViewControllerDelegate, LogoutDelegate {
     func didLogin() {
         setRootViewController(onboardingContainerViewController)
     }
     
     func didFinishOnboarding() {
-        print("Finished Onboarding")
+        setRootViewController(dummyViewController)
+    }
+    
+    func didLogout() {
+        setRootViewController(loginViewController)
     }
 }
 
