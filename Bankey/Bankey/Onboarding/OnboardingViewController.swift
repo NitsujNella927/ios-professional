@@ -16,6 +16,7 @@ class OnboardingViewController: UIViewController {
     let heroImageName: String
     let titleText: String
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         style()
