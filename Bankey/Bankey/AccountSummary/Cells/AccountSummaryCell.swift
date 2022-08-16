@@ -10,6 +10,19 @@ import UIKit
 
 class AccountSummaryCell: UITableViewCell {
     
+    enum AccountType: String {
+        case Banking
+        case CreditCard
+        case Investment
+    }
+    
+    struct ViewModel {
+        let accountType: AccountType
+        let accountName: String
+    }
+    
+    let viewModel: ViewModel? = nil
+    
     let typeLabel = UILabel()
     let underlineView = UIView()
     let nameLabel = UILabel()
@@ -122,8 +135,18 @@ extension AccountSummaryCell {
         
         return rootString
     }
+}
 
-
-//    balanceAmountLabel.attributedText = makeFormattedBalance(dollars: "929,466", cents: "23")
-//    static let rowHeight: CGFloat = 112
+extension AccountSummaryCell {
+    func configure(with vm: ViewModel) {
+        switch vm.accountType {
+            
+        case .Banking:
+            break
+        case .CreditCard:
+            break
+        case .Investment:
+            break
+        }
+    }
 }
