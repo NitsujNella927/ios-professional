@@ -46,6 +46,11 @@ class LoginViewController: UIViewController {
         
         loginView.usernameTextField.text = ""
         loginView.passwordTextField.text = ""
+        
+        if !loginView.passwordTextField.isSecureTextEntry {
+            loginView.passwordTextField.isSecureTextEntry.toggle()
+            passwordToggleButton.isSelected.toggle()
+        }
     }
 }
 
