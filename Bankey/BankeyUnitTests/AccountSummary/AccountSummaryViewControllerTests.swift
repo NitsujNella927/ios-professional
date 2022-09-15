@@ -49,13 +49,13 @@ class AccountSummaryViewControllerTests: XCTestCase {
         XCTAssertEqual("We could not process your request.  Please try again.", titleAndMessage.1)
     }
     
-//    func testAlertForServerError() throws {
-//        mockManager.error = NetworkError.serverError
-//        vc.forceFetchProfile()
-//
-//        XCTAssertEqual("Server Error", vc.errorAlert.title)
-//        XCTAssertEqual("Ensure you are connected to the internet.  Please try again.", vc.errorAlert.message)
-//    }
+    func testAlertForServerError() throws {
+        mockManager.error = NetworkError.serverError
+        vc.forceFetchProfile()
+
+        XCTAssertEqual("Server Error", vc.errorAlert.title)
+        XCTAssertEqual("Ensure you are connected to the internet.  Please try again.", vc.errorAlert.message)
+    }
     
     
 }
