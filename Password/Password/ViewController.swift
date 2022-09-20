@@ -10,7 +10,7 @@ import UIKit
 class ViewController: UIViewController {
     let stackView = UIStackView()
     let newPasswordTextField = PasswordTextField(placeHolderText: "New password")
-    let criteriaView = PasswordCriteriaView()
+    let criteriaView = PasswordCriteriaView(text: "uppercase letter (A-Z)")
     
     override func viewDidLoad() {
         super.viewDidLoad()
