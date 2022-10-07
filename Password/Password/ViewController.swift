@@ -45,6 +45,7 @@ extension ViewController {
         stackView.addArrangedSubview(newPasswordTextField)
         stackView.addArrangedSubview(statusView)
         stackView.addArrangedSubview(confirmPasswordTextField)
+        stackView.addArrangedSubview(resetButton)
         
         view.addSubview(stackView)
         
